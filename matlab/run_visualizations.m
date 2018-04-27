@@ -10,7 +10,7 @@ gradient_color_resolution = 65;
 exponent = 1;
 palette = colormap(brewermap(gradient_color_resolution,'*RdBu'));
 bin_num = 256;
-proportions = [-1 0.9375, 0.800, 0.500, 0.200, 0.0625];
+proportions = [0.0625, 0.200, 0.500, 0.800, 0.9375, -1];
 
 % auxiliary variables
 n = a + b + c + d;
@@ -72,7 +72,7 @@ v = values(measures);
 for i = 1:length(measures)
     g = figure(i);
     visualize_gradients(v{i}, scale, exponent, palette);
-%     print(g, strcat('../../images/', k{i}, '_gradients.pdf'), '-dpdf','-r0');
+%    print(g, strcat('../../images/', k{i}, '_gradients.pdf'), '-dpdf','-r0');
     title(k{i});
 end
 tilefigs
@@ -96,12 +96,14 @@ for i = 1:length(measures)
         ax = gca;
         ax.YAxis.TickLabelFormat = '%,.3f';
         ax.YAxis.Exponent = 0;
-        set(gca, 'YTick', []);
+        if j ~= 1
+            set(gca, 'YTick', []);
+        end
         axis(a_v{i});
         set(h,'Units','Inches');
         pos = get(h,'Position');
         set(h,'PaperPositionMode','Auto','PaperUnits','Inches','PaperSize',[pos(3), pos(4)])
-%         print(h, strcat('../../images/', k{i}, '_p_', strrep(num2str(proportions(j)), '.', '_'), '.pdf'), '-dpdf','-r0');
+%        print(h, strcat('../../images/', k{i}, '_p_', strrep(num2str(proportions(j)), '.', '_'), '.pdf'), '-dpdf','-r0');
         title(strcat(k{i}, {' p='}, num2str(proportions(j))));
     end
     tilefigs
