@@ -1,0 +1,13 @@
+Name,Examples,Features,Imbalance ratio,Minority class
+arcene,200,10000,0.44,positive
+breast-w,699,9,0.34,malignant
+colon,62,2000,0.35,1
+credit-g,1000,61,0.3,bad
+ecoli,336,7,0.1,imU
+glass,213,9,0.08,v-float
+ionosphere,350,34,0.36,bad
+micromass,571,1300,0.09,AUG.AEX
+new-thyroid,214,5,0.16,hyper
+solar-flare,1066,10,0.17,F
+transfusion,747,4,0.24,yes
+yeast,1484,8,0.03,ME2
