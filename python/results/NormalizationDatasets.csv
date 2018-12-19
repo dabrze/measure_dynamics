@@ -1,0 +1,13 @@
+Name,Examples,Features,Imbalance ratio,Minority class
+breast-w,699,9,0.3447782546494993,malignant
+yeast,1484,8,0.03436657681940701,ME2
+transfusion,747,4,0.23694779116465864,yes
+ecoli,336,7,0.10416666666666667,imU
+new-thyroid,214,5,0.16355140186915887,hyper
+arcene,200,10000,0.44,positive
+glass,213,9,0.07981220657276995,v-float
+colon,62,2000,0.3548387096774194,1
+micromass,571,1300,0.08756567425569177,AUG.AEX
+ionosphere,350,34,0.36,bad
+solar-flare,1066,10,0.17073170731707318,F
+credit-g,1000,61,0.3,bad

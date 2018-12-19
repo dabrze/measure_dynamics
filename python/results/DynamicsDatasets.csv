@@ -1,0 +1,13 @@
+Name,Examples,Features,Imbalance ratio,Minority class
+Synthetic_n=20000_p=50_r=0_001,10000,50,0.001,Minority
+Synthetic_n=20000_p=50_r=0_5,10000,50,0.5,Minority
+Synthetic_n=20000_p=50_r=0_1,10000,50,0.1,Minority
+Synthetic_n=20000_p=5_r=0_001,10000,5,0.001,Minority
+Synthetic_n=20000_p=500_r=0_001,10000,500,0.001,Minority
+Synthetic_n=20000_p=500_r=0_5,10000,500,0.5,Minority
+Synthetic_n=20000_p=5_r=0_1,10000,5,0.1,Minority
+Synthetic_n=20000_p=500_r=0_01,10000,500,0.01,Minority
+Synthetic_n=20000_p=500_r=0_1,10000,500,0.1,Minority
+Synthetic_n=20000_p=5_r=0_01,10000,5,0.01,Minority
+Synthetic_n=20000_p=5_r=0_5,10000,5,0.5,Minority
+Synthetic_n=20000_p=50_r=0_01,10000,50,0.01,Minority

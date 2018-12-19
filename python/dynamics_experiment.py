@@ -16,14 +16,17 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 
-from experiments import Experiment
+from experiments import Experiment, generate_synthetic_datasets
 
 if __name__ == '__main__':
     SEED = 23
     CV_FOLDS = 10
     CV_REPS = 10
-    DATA_PATH = os.path.join(os.path.dirname(__file__), "data")
-    NAME = "Normalization"
+    BASE_DATASET_SIZE = 20000
+    FEATURE_SETS = [5, 50, 500]
+    RATIOS = [0.001, 0.01, 0.1, 0.5]
+    DATA_PATH = os.path.join(os.path.dirname(__file__), "synthetic_data")
+    NAME = "Dynamics"
 
     classifiers = {
         "kNN": KNeighborsClassifier(),
@@ -54,13 +57,8 @@ if __name__ == '__main__':
         "Kappa": make_scorer(cohen_kappa_score),
         "MCC": make_scorer(matthews_corrcoef),
     }
-    dataset_minority_class_mapping = {
-        "transfusion": "yes", "glass": "v-float", "breast-w": "malignant",
-        "ionosphere": "bad", "new-thyroid": "hyper", "arcene": "positive",
-        "colon": "1", "micromass": "AUG.AEX", "yeast": "ME2", "solar-flare": "F",
-        "ecoli": "imU", "credit-g": "bad"
-    }
 
-    experiment = Experiment(NAME, DATA_PATH, classifiers, scorers, scikit_scorers, dataset_minority_class_mapping,
+    minority_class_mapping = generate_synthetic_datasets(BASE_DATASET_SIZE, FEATURE_SETS, RATIOS, DATA_PATH, SEED)
+    experiment = Experiment(NAME, DATA_PATH, classifiers, scorers, scikit_scorers, minority_class_mapping,
                             CV_FOLDS, CV_REPS, SEED)
     experiment.run()
